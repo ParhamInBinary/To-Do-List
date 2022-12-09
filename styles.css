@@ -14,6 +14,7 @@
     --detailColor: #F0EBCE;
 }
 
+/* ========== HEADER ========== */
 header {
     display: flex;
     justify-content: space-between;
@@ -45,4 +46,13 @@ header {
     align-items: center;
     border: 1px solid var(--detailColor);
     padding: 1rem;
+}
+
+/* ========== WEEKDAYS ========== */
+.weekdays {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--secondColor);
+    color: var(--detailColor);
+    padding: 2rem 3rem; 
 }

@@ -48,11 +48,18 @@ header {
 .centerPart {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .monthDisplay {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 1rem;
+}
+
+.currentMonth {
+    font-size: 20px;
+    padding: 0 6rem;
 }
 
 .timeAndDate {
@@ -62,9 +69,9 @@ header {
     border: 1px solid var(--detailColor);
     padding: 1rem;
 }
-.date {
+.currentDate {
     display: flex;
-    
+    gap: 5px;    
 }
 
 /* ========== WEEKDAYS ========== */

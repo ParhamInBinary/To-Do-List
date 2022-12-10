@@ -1,4 +1,5 @@
 import { startTimeAndDate } from "./JS-files/startTimeAndDate.js";
+import { loadCalendarDays } from "./JS-files/loadCalendarDays.js";
 
 main();
 
@@ -7,4 +8,5 @@ main();
  */
 function main() {
     startTimeAndDate();
+    loadCalendarDays();
 }

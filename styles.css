@@ -91,3 +91,14 @@ header {
     flex-grow: 1;
     opacity: .7;
 }
+
+.daySquare {
+    width: calc(100% / 7 - 2px);
+    padding: 1rem;
+    border: 3px solid var(--secondColor);
+    margin: 1px;
+}
+
+.emptySquare {
+
+}

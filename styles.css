@@ -14,13 +14,18 @@
     --detailColor: #F0EBCE;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
 /* ========== HEADER ========== */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: var(--mainColor);
-    padding: 2rem;
+    padding: 1.5rem;
     color: var(--detailColor);
 }
 
@@ -40,12 +45,26 @@ header {
     transition: .2s;
 }
 
+.centerPart {
+    display: flex;
+    flex-direction: column;
+}
+.monthDisplay {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
 .timeAndDate {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid var(--detailColor);
     padding: 1rem;
+}
+.date {
+    display: flex;
+    
 }
 
 /* ========== WEEKDAYS ========== */
@@ -54,5 +73,14 @@ header {
     justify-content: space-between;
     background-color: var(--secondColor);
     color: var(--detailColor);
-    padding: 2rem 3rem; 
+    padding: 2rem 4rem; 
+}
+
+/* ========== CALENDAR ========== */
+.calendarBody {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--offColor);
+    flex-grow: 1;
+    opacity: .7;
 }

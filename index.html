@@ -7,6 +7,7 @@
     <title>To Do List</title>
     <link rel="stylesheet" href="./styles.css">
     <script type="module" src="./main.js"></script>
+    <script src="https://kit.fontawesome.com/78a289b7c0.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- ========== HEADER ========== -->
@@ -15,9 +16,24 @@
             <p>My events</p>
             <div class="dropdownIcon"></div>
         </div>
-        <h1>My Calendar</h1>
+        <div class="centerPart">
+            <h1>My Calendar</h1>
+            <div class="monthDisplay">
+                <i class="fa-solid fa-angle-left"></i>
+                <p class="currentMonth"></p>
+                <i class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
         <div class="timeAndDate">
             <p>Today</p>
+            <div class="date">
+                <p class="month"></p>
+                
+                <p class="day"></p>
+                
+                <p class="year"></p>
+            </div>
+            <p class="clock"></p>
         </div>
     </header>
     

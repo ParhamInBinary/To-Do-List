@@ -67,7 +67,7 @@ header {
     flex-direction: column;
     align-items: center;
     border: 1px solid var(--detailColor);
-    padding: 1rem;
+    padding: 1rem 3rem;
 }
 .currentDate {
     display: flex;

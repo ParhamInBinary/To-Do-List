@@ -13,7 +13,6 @@ function tick() {
     updateWeekday();
     updateDate();
     updateTime(currently, locale);
-    updateMonthName();
 }
 
 /**
@@ -50,16 +49,4 @@ function updateTime(today, locale) {
    const clock = document.querySelector(".clock")
    const time = today.toTimeString(locale).split(" ")[0];
    clock.textContent = time;
-}
-
-/**
-* Function to display the name of current month.
-*/
-function updateMonthName() {
-    const month = new Date();
-    const monthToString = month.toLocaleString("UTC", {
-        month: "long",
-    }).toUpperCase() ;
-    const monthDiv = document.querySelector(".currentMonth");
-    monthDiv.textContent = monthToString;
 }

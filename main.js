@@ -1,6 +1,7 @@
 import { startTimeAndDate } from "./JS-files/startTimeAndDate.js";
 import { loadCalendarDays } from "./JS-files/loadCalendarDays.js";
 import { switchMonth } from "./JS-files/loadCalendarDays.js";
+import { openMyEvents } from "./JS-files/openMyEvents.js";
 
 main();
 
@@ -18,5 +19,5 @@ function main() {
  * EventListeners thoughout the script.
  */
 function addEventListeners() {
-
+    document.querySelector(".eventDropdown").addEventListener("click", openMyEvents)
 }

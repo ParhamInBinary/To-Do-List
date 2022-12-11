@@ -1,3 +1,5 @@
+const userLocation = navigator.language;
+
 /**
 * A function start a interval of 1s to simulate a clock ticking.
 */
@@ -20,7 +22,7 @@ function tick() {
 */
 function updateWeekday() {
     const weekday = new Date();
-    const weekdayToString = weekday.toLocaleString("UTC", {
+    const weekdayToString = weekday.toLocaleString(userLocation, {
         weekday: "long",
     }).toUpperCase() ;
     const weekdayDiv = document.querySelector(".todaysWeekday");
@@ -32,7 +34,7 @@ function updateWeekday() {
 */
 function updateDate() {
     const date = new Date();
-    const dateToString = date.toLocaleString("UTC", {
+    const dateToString = date.toLocaleString(userLocation, {
         year: "numeric",
         month: "numeric",
         day: "numeric",

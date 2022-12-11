@@ -19,5 +19,5 @@ function main() {
  * EventListeners thoughout the script.
  */
 function addEventListeners() {
-    document.querySelector(".eventDropdown").addEventListener("click", openMyEvents)
+    document.querySelector(".eventDropdown").addEventListener("click", openMyEvents);
 }

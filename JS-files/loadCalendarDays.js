@@ -1,13 +1,20 @@
 let whichMonth = 0;
+
 /**
  * Loads in days into calendar body.
  */
 export function loadCalendarDays() {
     const calendarBody = document.querySelector(".calendarBody");
-    const currentMonth = document.querySelector(".currentMonth")
+    const currentMonth = document.querySelector(".currentMonth");
     const weekdays = ["söndag", "måndag", "tisdag", "onsdag", "torsdag", "fredag", "lördag"];
-
+    const userLocation = navigator.language;
+    
     const date = new Date();
+
+    if ( whichMonth !== 0 ) {
+        date.setMonth( new Date().getMonth() + whichMonth );
+    }
+
     const day = date.getDate();
     const month = date.getMonth();
     const year = date.getFullYear();
@@ -15,13 +22,9 @@ export function loadCalendarDays() {
     const firstDayOfMonth = new Date(year, month, 1);
     const daysInMonth = new Date( year, month + 1, 0).getDate();
 
-    currentMonth.textContent = `${ date.toLocaleString( "UTC", { month: "long", year: "numeric" }).toUpperCase() }`
+    currentMonth.textContent = `${ date.toLocaleString( userLocation , { month: "long", year: "numeric" }).toUpperCase() }`
 
-    if ( whichMonth !== 0 ) {
-        date.setMonth( new Date().getMonth() + whichMonth );
-    }
-
-    const dateString = firstDayOfMonth.toLocaleDateString("UTC", {
+    const dateString = firstDayOfMonth.toLocaleDateString(userLocation, {
         weekday: "long",
         year: "numeric",
         month: "numeric",
@@ -49,9 +52,11 @@ export function loadCalendarDays() {
 
         calendarBody.appendChild(daySquare);
     }
-
 }
 
+/**
+ * Switches name of month on click, displaying chosen month.
+ */
 export function switchMonth() {
     
     document.querySelector(".prevMonth").addEventListener("click", () => {

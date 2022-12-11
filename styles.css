@@ -45,11 +45,13 @@ header {
     transition: .2s;
 }
 
+
 .centerPart {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .monthDisplay {
     display: flex;
     justify-content: space-between;
@@ -59,7 +61,9 @@ header {
 
 .currentMonth {
     font-size: 20px;
-    padding: 0 6rem;
+    padding: 0 2rem;
+    width: 20rem;
+    text-align: center;
 }
 
 .timeAndDate {

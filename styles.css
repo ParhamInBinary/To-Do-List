@@ -19,6 +19,7 @@ body {
     flex-direction: column;
     height: 100vh;
 }
+
 /* ========== HEADER ========== */
 header {
     display: flex;
@@ -29,11 +30,13 @@ header {
     color: var(--detailColor);
 }
 
+/* ========== DROPDOWN ========== */
 .eventDropdown {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px solid var(--detailColor);
+    border-radius: 10px;
     padding: 1rem;
     gap: 2rem;
 }
@@ -44,7 +47,152 @@ header {
     border-top: 6px solid var(--detailColor);
     transition: .2s;
 }
+/* ========== DROPDOWN ========== */
 
+
+/* ========== DROPDOWN WINDOW========== */
+.dropdownWindow{
+    display: none;
+    position: absolute;
+    top: 6.5rem;
+    padding: 2rem;
+    border: 1px solid var(--detailColor);
+    background-color: var(--mainColor);
+    border-radius: 10px;
+    transform: translateY(-8.5rem) scaleY(0);
+    transition: transform .5s;
+}
+.openMyEvents {
+    display: block;
+    transform: translateY(0) scaleY(1);
+}
+
+.dropdownWindow span {
+    margin: 0 3rem;
+}
+
+.spanSaved {
+    color: #7C7757;
+}
+
+.dropdownWindow span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    transform: scaleX(1);
+    color: var(--detailColor);
+}
+
+
+/* ========== EVENT ITEM ========== */
+.eventItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    padding: 1rem 1.5rem;
+    background-color: var(--offColor);
+    border-radius: 10px;
+    transition: transform .1s;
+}
+.eventItem:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.eventIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--detailColor);
+    color: var(--mainColor);
+    height: 70px;
+    width: 70px;
+    border-radius: 10px;
+}
+
+.eventItemInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+    margin: 0 .5rem;
+    height: 4rem;
+}
+
+.eventItemInfo div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.eventItemtitle {
+    align-items: center;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.eventItemDate {
+    align-items: center;
+    font-size: 13px;
+}
+.eventItemDate:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.eventItemDescription {
+    display: flex;
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.removeEventItem {
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(217, 18, 18);
+    color: var(--detailColor);
+    transition: transform .2s;
+}
+.removeEventItem:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+/* ========== EVENT ITEM ========== */
+
+
+/* ========== ADD EVENT ITEM ========== */
+.addEvent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: .5rem;
+    width: 10rem;
+    transition: transform .2s;
+    color: #7C7757;
+}
+.addEvent:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    transform: scale(1.05);
+    color: var(--detailColor);
+}
+
+.addEventBtn {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    border: none;
+    background-color: var(--detailColor);
+    color: var(--mainColor);
+}
+/* ========== ADD EVENT ITEM ========== */
+
+/* ========== DROPDOWN WINDOW========== */
+
+
+/* ========== CENTER OF HEADER ========== */
 
 .centerPart {
     display: flex;
@@ -65,18 +213,26 @@ header {
     width: 20rem;
     text-align: center;
 }
+/* ========== CENTER OF HEADER ========== */
 
+
+/* ========== TIME AND DATE DISPLAY ========== */
 .timeAndDate {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid var(--detailColor);
+    border-radius: 10px;
     padding: 1rem 3rem;
 }
 .currentDate {
     display: flex;
-    gap: 5px;    
+    gap: 5px;
 }
+/* ========== TIME AND DATE DISPLAY ========== */
+
+/* ========== HEADER ========== */
+
 
 /* ========== WEEKDAYS ========== */
 .weekdays {
@@ -86,23 +242,27 @@ header {
     color: var(--detailColor);
     padding: 2rem 4rem; 
 }
+/* ========== WEEKDAYS ========== */
+
 
 /* ========== CALENDAR ========== */
 .calendarBody {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--offColor);
+    background-color: rgba(170, 139, 86, 0.8);
     flex-grow: 1;
-    opacity: .7;
 }
 
 .daySquare {
     width: calc(100% / 7 - 2px);
     padding: 1rem;
-    border: 3px solid var(--secondColor);
     margin: 1px;
+    color: var(--detailColor);
+    border: 3px solid var(--secondColor);
+    border-radius: 10px;
 }
 
 .emptySquare {
     border: none;
 }
+/* ========== CALENDAR ========== */

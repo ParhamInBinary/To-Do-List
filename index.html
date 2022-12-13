@@ -26,6 +26,7 @@
                 <p>Year</p>
             </div>
             <select name="choseMonth" id="choseMonth" required>
+                <option value="month"></option>
                 <option value="january">January</option>
                 <option value="february">February</option>
                 <option value="march">March</option>
@@ -40,6 +41,7 @@
                 <option value="december">December</option>
             </select>
             <select name="choseDay" id="choseDay" required>
+                <option value="day"></option>
                 <option value="01">01</option>
                 <option value="02">02</option>
                 <option value="03">03</option>
@@ -82,9 +84,9 @@
             <option value="appointment">Appointment</option>
         </select>
         <div class="bottomRow">
-            <buttin class="submitEvent">Add</buttin>
+            <input type="submit" id="submitEvent" name="submitEvent" value="Add">
             <div>
-                <input id="checkbox" type="checkbox">
+                <input id="checkbox" type="checkbox" name="checkbox">
                 <span>Save date</span>
             </div>
         </div>

@@ -1,12 +1,22 @@
-const eventItemTitle = document.querySelector("#title").addEventListener("input", addEventItem);
-const eventItemDesc = document.querySelector("#description").addEventListener("input", addEventItem);
-let eventItemMonth = document.querySelector("#choseMonth").addEventListener("change", addEventItem);
-let eventItemDay = document.querySelector("#choseDay").addEventListener("change", addEventItem);
-const eventItemYear = document.querySelector("#choseYear").addEventListener("input", addEventItem);
-let eventItemOccasion = document.querySelector("#occasion").addEventListener("change", addEventItem);
 
+export function addEventItem() {
+    const inputs = document.querySelectorAll(".addEventWindow input, .addEventWindow textarea, .addEventWindow select");
+    for (const input of inputs) {
+      input.addEventListener("input", saveToLS);
+    }
+}
 
-export function addEventItem(event) {
-    eventItemTitle = event.target;
-    localStorage.setItem(eventItemTitle.title, eventItemTitle.value);
+function saveToLS(event) {
+    const input = event.target;
+    localStorage.setItem(input.name, input.value);
+}
+
+export function addEventToList() {
+    console.log("ASd")
+    const eventItem = document.querySelector(".eventItem");
+    const eventItemTitle = document.querySelector(".eventItemtitle");
+    const eventItemDesc = document.querySelector(".eventItemDescription");
+    const eventItemDate = document.querySelector(".eventItemDate");
+
+    eventItem.classList.add(".eventItem");
 }

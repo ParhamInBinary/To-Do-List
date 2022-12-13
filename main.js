@@ -1,6 +1,6 @@
 import { startTimeAndDate } from "./JS-files/startTimeAndDate.js";
-import { loadCalendarDays } from "./JS-files/loadCalendarDays.js";
-import { switchMonth } from "./JS-files/loadCalendarDays.js";
+import { loadCalendarDays } from "./JS-files/loadCalendar.js";
+import { switchMonth } from "./JS-files/loadCalendar.js";
 import { openMyEvents } from "./JS-files/openMyEvents.js";
 import { openAddEventWindow } from "./JS-files/openAddEventWindow.js";
 

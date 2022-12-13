@@ -109,8 +109,11 @@ label, .dateTitles, .occasionTitle {
     font-size: 15px;
 }
 
-.submitEvent {
+#submitEvent {
     background-color: var(--offColor);
+    color: var(--mainColor);
+    font-size: 18px;
+    border: none;
     border-radius: 10px;
     width: 6rem;
     padding: .5rem;

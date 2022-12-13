@@ -24,4 +24,5 @@ function main() {
 function addEventListeners() {
     document.querySelector(".eventDropdown").addEventListener("click", openMyEvents);
     document.querySelector(".addEvent").addEventListener("click", openAddEventWindow);
+    document.querySelector(".closeAddEventWindow").addEventListener("click", openAddEventWindow);
 }

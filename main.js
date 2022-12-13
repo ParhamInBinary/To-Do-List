@@ -3,6 +3,7 @@ import { loadCalendarDays } from "./JS-files/loadCalendar.js";
 import { switchMonth } from "./JS-files/loadCalendar.js";
 import { openMyEvents } from "./JS-files/openMyEvents.js";
 import { openAddEventWindow } from "./JS-files/openAddEventWindow.js";
+import { addEventItem } from "./JS-files/eventItem.js";
 
 main();
 
@@ -14,6 +15,7 @@ function main() {
     loadCalendarDays();
     addEventListeners();
     switchMonth();
+    addEventItem();
 }
 
 /**
@@ -22,5 +24,5 @@ function main() {
 function addEventListeners() {
     document.querySelector(".eventDropdown").addEventListener("click", openMyEvents);
     document.querySelector(".addEvent").addEventListener("click", openAddEventWindow);
-    document.querySelector(".closeAddEventWindow").addEventListener("click", openAddEventWindow)
+    document.querySelector(".closeAddEventWindow").addEventListener("click", openAddEventWindow);
 }

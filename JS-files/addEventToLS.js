@@ -1,13 +1,12 @@
 const eventTitle = document.querySelector("#title");
 const eventDesc = document.querySelector("#description");
 const eventOccasion = document.querySelector("#occasion");
-const eventMonth = document.querySelector("#choseMonth");
-const eventDay = document.querySelector("#choseDay");
-const eventYear = document.querySelector("#choseYear");
+const eventDate = document.querySelector("#pickDate");
+
 
 
 export function addEventToLS() {
-    const date = `${eventYear.value}-${eventMonth.value}-${eventDay.value}`;
+    const date = eventDate.value;
 
     const eventItem = {
         title : eventTitle.value,

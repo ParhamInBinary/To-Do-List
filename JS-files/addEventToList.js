@@ -2,6 +2,8 @@
 const eventList = document.querySelector(".eventList");
 
 export function addEventToList() {
+
+    
     const eventItem = document.createElement("div");
     eventItem.classList.add("eventItem");
 
@@ -28,21 +30,33 @@ export function addEventToList() {
     const eventItemDescription = document.createElement("p");
     eventItemDescription.classList.add("eventItemDescription");
 
+    const removeAndEditContainer = document.createElement("div");
+    removeAndEditContainer.classList.add("removeAndEditContainer");
+
     const removeEventItem = document.createElement("button");
     removeEventItem.classList.add("removeEventItem");
 
     const removeEventItemIcon = document.createElement("i");
     removeEventItemIcon.classList.add("fa-solid", "fa-trash");
+
+    const editEventItem = document.createElement("button");
+    editEventItem.classList.add("editEventItem")
+
+    const editEventItemIcon = document.createElement("i");
+    editEventItemIcon.classList.add("fa-solid", "fa-pen")
     
+
+    editEventItem.append(editEventItemIcon);
     removeEventItem.append(removeEventItemIcon);
+    removeAndEditContainer.append(removeEventItem, editEventItem)
     eventItemDate.append(eventItemDateIcon);
     titleAndDateContainer.append(eventItemTitle, eventItemDate);
     eventItemInfo.append(titleAndDateContainer, eventItemDescription);
     eventIcon.append(i);
-    eventItem.append(eventIcon, eventItemInfo, removeEventItem);
+    eventItem.append(eventIcon, eventItemInfo, removeAndEditContainer);
     eventList.append(eventItem);
     
-    eventItemTitle.innerText = JSON.stringify(localStorage.getItem(eventItem.title));
-    eventItemDescription.innerText = JSON.stringify(localStorage.getItem(eventItem.description));
-    console.log(eventItem)
+    eventItemTitle.innerText = localStorage.getItem(JSON.parse(title))
+    // eventItemDescription.innerText = JSON.stringify(localStorage.getItem(eventItemObject.description));
+    // eventItemDate.innerText = JSON.stringify(localStorage.getItem(eventItemObject.date));
 }

@@ -69,9 +69,15 @@ body {
     justify-content: space-evenly;
 }
 
-#title, #choseMonth,
-#choseDay, #choseYear,
-#occasion {
+.choseDate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title,
+#occasion, 
+#pickDate {
     padding: .5rem 1rem;
     font-size: 20px;
     background-color: var(--detailColor);
@@ -91,9 +97,6 @@ body {
     padding: .5rem;
 }
 
-#choseYear {
-    width: 7rem;
-}
 
 label, .dateTitles, .occasionTitle {
     margin-top: 1rem;
@@ -226,7 +229,7 @@ header {
     align-items: center;
 }
 
-.eventItemtitle {
+.eventItemTitle {
     align-items: center;
     font-size: 18px;
     text-decoration: underline;

@@ -6,6 +6,7 @@ import { openAddEventWindow } from "./JS-files/openAddEventWindow.js";
 import { closeAddEventWindow } from "./JS-files/closeAddEventWindow.js";
 import { addEventToLS } from "./JS-files/addEventToLS.js";
 import { addEventToList } from "./JS-files/addEventToList.js";
+// import { removeEventItem } from "./JS-files/removeEventItem.js";
 
 main();
 
@@ -17,7 +18,6 @@ function main() {
     loadCalendarDays();
     addEventListeners();
     switchMonth();
-    addEventToList();
 }
 
 /**
@@ -27,5 +27,10 @@ function addEventListeners() {
     document.querySelector(".eventDropdown").addEventListener("click", openMyEvents);
     document.querySelector(".addEvent").addEventListener("click", openAddEventWindow);
     document.querySelector(".closeAddEventWindow").addEventListener("click", closeAddEventWindow);
-    document.querySelector("#submitEvent").addEventListener("click", addEventToLS);
+    document.querySelector("#submitEvent").addEventListener("click", () => {
+        addEventToLS();
+        addEventToList();
+        closeAddEventWindow();
+    });
+    // document.querySelector(".removeEventItem").addEventListener("click", removeEventItem);
 }

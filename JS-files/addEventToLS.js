@@ -8,13 +8,13 @@ const eventDate = document.querySelector("#pickDate");
 export function addEventToLS() {
     const date = eventDate.value;
 
-    const eventItem = {
+    const eventItemObject = {
         title : eventTitle.value,
         date,
         description : eventDesc.value,
         occasion : eventOccasion.value,
     }
-    localStorage.setItem("events", JSON.stringify(eventItem))
+    localStorage.setItem("events", JSON.stringify(eventItemObject))
 
-    console.log(eventItem)
+    console.log(eventItemObject)
 }

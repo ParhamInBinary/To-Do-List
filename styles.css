@@ -84,8 +84,6 @@ body {
     color: var(--mainColor);
     border: none;
     border-radius: 10px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
 }
 
 #description {
@@ -250,6 +248,12 @@ header {
     font-size: 14px;
 }
 
+.removeAndEditContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
 .removeEventItem {
     height: 30px;
     width: 30px;
@@ -260,6 +264,20 @@ header {
     transition: transform .2s;
 }
 .removeEventItem:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.editEventItem {
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(164, 164, 164);
+    color: black;
+    transition: transform .2s;
+}
+.editEventItem:hover {
     cursor: pointer;
     transform: scale(1.2);
 }

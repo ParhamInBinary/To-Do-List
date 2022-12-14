@@ -3,7 +3,7 @@ import { loadCalendarDays } from "./JS-files/loadCalendar.js";
 import { switchMonth } from "./JS-files/loadCalendar.js";
 import { openMyEvents } from "./JS-files/openMyEvents.js";
 import { openAddEventWindow } from "./JS-files/openAddEventWindow.js";
-import { addEventToLS } from "./JS-files/eventItem.js";
+import { addEventToLS } from "./JS-files/addEventToLS.js";
 import { addEventToList } from "./JS-files/addEventToList.js";
 
 main();

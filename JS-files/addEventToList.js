@@ -16,8 +16,8 @@ export function addEventToList() {
 
     const titleAndDateContainer = document.createElement("div");
     
-    const eventItemtitle = document.createElement("p");
-    eventItemtitle.classList.add("eventItemtitle");
+    const eventItemTitle = document.createElement("p");
+    eventItemTitle.classList.add("eventItemTitle");
 
     const eventItemDate = document.createElement("p");
     eventItemDate.classList.add("eventItemDate");
@@ -36,12 +36,13 @@ export function addEventToList() {
     
     removeEventItem.append(removeEventItemIcon);
     eventItemDate.append(eventItemDateIcon);
-    titleAndDateContainer.append(eventItemtitle, eventItemDate);
+    titleAndDateContainer.append(eventItemTitle, eventItemDate);
     eventItemInfo.append(titleAndDateContainer, eventItemDescription);
     eventIcon.append(i);
     eventItem.append(eventIcon, eventItemInfo, removeEventItem);
     eventList.append(eventItem);
     
-    
+    eventItemTitle.innerText = JSON.stringify(localStorage.getItem(eventItem.title));
+    eventItemDescription.innerText = JSON.stringify(localStorage.getItem(eventItem.description));
     console.log(eventItem)
 }

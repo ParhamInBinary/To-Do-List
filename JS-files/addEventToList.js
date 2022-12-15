@@ -52,7 +52,10 @@ export function addEventToList() {
   eventItem.append(eventIcon, eventItemInfo, removeAndEditContainer);
   eventList.append(eventItem);
 
-  eventItemTitle.innerText = localStorage.getItem(JSON.parse(title));
-  // eventItemDescription.innerText = JSON.stringify(localStorage.getItem(eventItemObject.description));
-  // eventItemDate.innerText = JSON.stringify(localStorage.getItem(eventItemObject.date));
+
+  const eventInStorage = JSON.parse(localStorage.getItem("events"));
+  
+  eventItemTitle.innerHTML = eventInStorage.title;
+  eventItemDate.innerHTML = eventInStorage.date;
+  eventItemDescription.innerHTML = eventInStorage.description;
 }

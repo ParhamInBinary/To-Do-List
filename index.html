@@ -1,95 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To Do List</title>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
     <script type="module" src="./main.js"></script>
-    <script src="https://kit.fontawesome.com/78a289b7c0.js" crossorigin="anonymous"></script>
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/78a289b7c0.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
     <div class="blurCover"></div>
 
     <div class="addEventWindow">
-        <i class="fa-solid fa-xmark closeAddEventWindow"></i>
-        <label for="title">Title</label>
-        <input name="title" id="title" type="text" required>
-        <label for="description">Description</label>
-        <textarea name="description" id="description" required></textarea>
+      <i class="fa-solid fa-xmark closeAddEventWindow"></i>
+      <label for="title">Title</label>
+      <input name="title" id="title" type="text" required />
+      <label for="description">Description</label>
+      <textarea name="description" id="description" required></textarea>
 
-        <div class="choseDate">
-            <label for="pickDate">Date</label>
-            <input name="pickDate" type="date" id="pickDate" required>
-        </div>
+      <div class="choseDate">
+        <label for="pickDate">Date</label>
+        <input name="pickDate" type="date" id="pickDate" required />
+      </div>
 
-        <p class="occasionTitle">Occasion</p>
-        <select name="occasion" id="occasion" required>
-            <option value="other">Other</option>
-            <option value="meeting">Meeting</option>
-            <option value="meeting">Birthday</option>
-            <option value="appointment">Appointment</option>
-        </select>
-        <div class="bottomRow">
-            <button id="submitEvent">Add</button>
-            <div>
-                <input id="checkbox" type="checkbox" name="checkbox">
-                <span>Save date</span>
-            </div>
+      <p class="occasionTitle">Occasion</p>
+      <select name="occasion" id="occasion" required>
+        <option value="other">Other</option>
+        <option value="meeting">Meeting</option>
+        <option value="meeting">Birthday</option>
+        <option value="appointment">Appointment</option>
+      </select>
+      <div class="bottomRow">
+        <button id="submitEvent">Add</button>
+        <div>
+          <input id="checkbox" type="checkbox" name="checkbox" />
+          <span>Save date</span>
         </div>
+      </div>
     </div>
     <!-- ========== HEADER ========== -->
     <header>
-        <div class="eventDropdown">
-            <p>My events</p>
-            <div class="dropdownIcon"></div>
-        </div>
+      <div class="eventDropdown">
+        <p>My events</p>
+        <div class="dropdownIcon"></div>
+      </div>
 
-        <div class="dropdownWindow">
-            <span class="spanEvents">Events</span>
-            <span class="spanSaved">Saved dates</span>
+      <div class="dropdownWindow">
+        <span class="spanEvents">Events</span>
+        <span class="spanSaved">Saved dates</span>
 
-            <div class="eventList">
-                
-            </div>
+        <div class="eventList"></div>
 
-            <div class="addEvent">
-                <button class="addEventBtn"><i class="fa-solid fa-plus fa-xl"></i></button>
-                <p>Add Event</p>
-            </div> 
+        <div class="addEvent">
+          <button class="addEventBtn">
+            <i class="fa-solid fa-plus fa-xl"></i>
+          </button>
+          <p>Add Event</p>
         </div>
-            
-        <div class="centerPart">
-            <h1>My Calendar</h1>
-            <div class="monthDisplay">
-                <i class="fa-solid fa-angle-left prevMonth"></i>
-                <p class="currentMonth"></p>
-                <i class="fa-solid fa-angle-right nextMonth"></i>
-            </div>
-        </div>
-            
+      </div>
 
-        <div class="timeAndDate">
-            <p class="todaysWeekday"></p>
-            <div class="currentDate"></div>
-            <p class="clock"></p>
+      <div class="centerPart">
+        <h1>My Calendar</h1>
+        <div class="monthDisplay">
+          <i class="fa-solid fa-angle-left prevMonth"></i>
+          <p class="currentMonth"></p>
+          <i class="fa-solid fa-angle-right nextMonth"></i>
         </div>
+      </div>
+
+      <div class="timeAndDate">
+        <p class="todaysWeekday"></p>
+        <div class="currentDate"></div>
+        <p class="clock"></p>
+      </div>
     </header>
-    
+
     <!-- ========== WEEKDAYS ========== -->
     <div class="weekdays">
-        <div class="sunday">Sunday</div>
-        <div class="monday">Monday</div>
-        <div class="tuesday">Tuesday</div>
-        <div class="wednesday">Wednesday</div>
-        <div class="thurdays">Thursday</div>
-        <div class="friday">Friday</div>
-        <div class="saturday">Saturday</div>
+      <div class="sunday">Sunday</div>
+      <div class="monday">Monday</div>
+      <div class="tuesday">Tuesday</div>
+      <div class="wednesday">Wednesday</div>
+      <div class="thurdays">Thursday</div>
+      <div class="friday">Friday</div>
+      <div class="saturday">Saturday</div>
     </div>
-    
+
     <!-- ========== CALENDAR ========== -->
     <main class="calendarBody"></main>
-    
-</body>
+  </body>
 </html>

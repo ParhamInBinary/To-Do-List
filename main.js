@@ -14,23 +14,29 @@ main();
  * Reading in the main function.
  */
 function main() {
-    startTimeAndDate();
-    loadCalendarDays();
-    addEventListeners();
-    switchMonth();
+  startTimeAndDate();
+  loadCalendarDays();
+  addEventListeners();
+  switchMonth();
 }
 
 /**
  * EventListeners thoughout the script.
  */
 function addEventListeners() {
-    document.querySelector(".eventDropdown").addEventListener("click", openMyEvents);
-    document.querySelector(".addEvent").addEventListener("click", openAddEventWindow);
-    document.querySelector(".closeAddEventWindow").addEventListener("click", closeAddEventWindow);
-    document.querySelector("#submitEvent").addEventListener("click", () => {
-        addEventToLS();
-        addEventToList();
-        closeAddEventWindow();
-    });
-    // document.querySelector(".removeEventItem").addEventListener("click", removeEventItem);
+  document
+    .querySelector(".eventDropdown")
+    .addEventListener("click", openMyEvents);
+  document
+    .querySelector(".addEvent")
+    .addEventListener("click", openAddEventWindow);
+  document
+    .querySelector(".closeAddEventWindow")
+    .addEventListener("click", closeAddEventWindow);
+  document.querySelector("#submitEvent").addEventListener("click", () => {
+    addEventToLS();
+    addEventToList();
+    closeAddEventWindow();
+  });
+  // document.querySelector(".removeEventItem").addEventListener("click", removeEventItem);
 }

@@ -1,6 +1,12 @@
 const eventList = document.querySelector(".eventList");
 
 export function addEventToList() {
+
+  eventList.textContent = "";
+
+  const eventInStorage = JSON.parse(localStorage.getItem("events"));
+  for ( const item of eventInStorage) {
+
   const eventItem = document.createElement("div");
   eventItem.classList.add("eventItem");
 
@@ -61,29 +67,32 @@ export function addEventToList() {
   eventList.append(eventItem);
 
 
-  const eventInStorage = JSON.parse(localStorage.getItem("events"));
   
-  if (eventInStorage.occasion === "personal") {
-    eventIcon.append(personalIconOccasion);
-  } else if (eventInStorage.occasion === "professional") {
-    eventIcon.append(professionalIconOccasion);
-  } else if (eventInStorage.occasion === "social") {
-    eventIcon.append(socialIconOccasion);
-  } else {
-    eventIcon.append(otherIconOccasion);
-  }
 
+    if (item.occasion === "personal") {
+      eventIcon.append(personalIconOccasion);
 
-  eventItemTitle.innerHTML = eventInStorage.title;
-  eventItemDate.innerHTML = eventInStorage.date;
-  eventItemDescription.innerHTML = eventInStorage.description;
+    } else if (item.occasion === "professional") {
+      eventIcon.append(professionalIconOccasion);
 
-  removeEventItem.addEventListener("click", () => {
-    deleteEventItem(eventItem);
+    } else if (item.occasion === "social") {
+      eventIcon.append(socialIconOccasion);
+
+    } else {
+      eventIcon.append(otherIconOccasion);
+    }
+  
+    eventItemTitle.textContent = item.title;
+    eventItemDate.textContent = item.date;
+    eventItemDescription.textContent = item.description;
+
     
-  })
-
-  
+    
+    removeEventItem.addEventListener("click", () => {
+      deleteEventItem(eventItem);
+      localStorage.removeItem("events");
+    })
+  }
 }
 
 function deleteEventItem(eventItem) {

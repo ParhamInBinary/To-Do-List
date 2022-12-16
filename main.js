@@ -6,7 +6,6 @@ import { openAddEventWindow } from "./JS-files/openAddEventWindow.js";
 import { closeAddEventWindow } from "./JS-files/closeAddEventWindow.js";
 import { addEventToLS } from "./JS-files/addEventToLS.js";
 import { addEventToList } from "./JS-files/addEventToList.js";
-// import { removeEventItem } from "./JS-files/removeEventItem.js";
 
 
 main();
@@ -39,7 +38,4 @@ function addEventListeners() {
     addEventToList();
     closeAddEventWindow();
   });
-  // document
-  // .querySelector(".removeEventItem")
-  // .addEventListener("click", removeEventItem)
 }

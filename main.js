@@ -8,6 +8,7 @@ import { addEventToLS } from "./JS-files/addEventToLS.js";
 import { addEventToList } from "./JS-files/addEventToList.js";
 // import { removeEventItem } from "./JS-files/removeEventItem.js";
 
+
 main();
 
 /**
@@ -38,5 +39,7 @@ function addEventListeners() {
     addEventToList();
     closeAddEventWindow();
   });
-  // document.querySelector(".removeEventItem").addEventListener("click", removeEventItem);
+  // document
+  // .querySelector(".removeEventItem")
+  // .addEventListener("click", removeEventItem)
 }

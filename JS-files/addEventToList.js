@@ -7,17 +7,17 @@ export function addEventToList() {
   const eventIcon = document.createElement("div");
   eventIcon.classList.add("eventIcon");
 
-  const birthdayIconOccasion = document.createElement("i");
-  birthdayIconOccasion.classList.add("fa-solid", "fa-cake-candles", "fa-xl");
+  const personalIconOccasion = document.createElement("i");
+  personalIconOccasion.classList.add("fa-solid", "fa-user", "fa-xl");
   
-  const meetingIconOccasion = document.createElement("i");
-  meetingIconOccasion.classList.add("<fa-solid", "fa-handshake-simple");
+  const professionalIconOccasion = document.createElement("i");
+  professionalIconOccasion.classList.add("fa-solid", "fa-handshake-angle", "fa-xl");
 
-  const appointmentIconOccasion = document.createElement("i");
-  appointmentIconOccasion.classList.add("fa-solid", "fa-user-doctor");
+  const socialIconOccasion = document.createElement("i");
+  socialIconOccasion.classList.add("fa-solid", "fa-user-doctor", "fa-xl");
 
   const otherIconOccasion = document.createElement("i");
-  otherIconOccasion.classList.add("fa-solid", "fa-ellipsis");
+  otherIconOccasion.classList.add("fa-solid", "fa-ellipsis", "fa-xl");
 
   const eventItemInfo = document.createElement("div");
   eventItemInfo.classList.add("eventItemInfo");
@@ -57,17 +57,25 @@ export function addEventToList() {
   eventItemDate.append(eventItemDateIcon);
   titleAndDateContainer.append(eventItemTitle, eventItemDate);
   eventItemInfo.append(titleAndDateContainer, eventItemDescription);
-  eventIcon.append(birthdayIconOccasion);
   eventItem.append(eventIcon, eventItemInfo, removeAndEditContainer);
   eventList.append(eventItem);
 
 
   const eventInStorage = JSON.parse(localStorage.getItem("events"));
   
+  if (eventInStorage.occasion === "personal") {
+    eventIcon.append(personalIconOccasion);
+  } else if (eventInStorage.occasion === "professional") {
+    eventIcon.append(professionalIconOccasion);
+  } else if (eventInStorage.occasion === "social") {
+    eventIcon.append(socialIconOccasion);
+  } else {
+    eventIcon.append(otherIconOccasion);
+  }
+
+
   eventItemTitle.innerHTML = eventInStorage.title;
   eventItemDate.innerHTML = eventInStorage.date;
   eventItemDescription.innerHTML = eventInStorage.description;
-  // eventIcon.innerHTML = if ( eventInStorage.occasion ) {
-    
-  // }
+
 }

@@ -28,11 +28,12 @@
       </div>
 
       <p class="occasionTitle">Occasion</p>
-      <select name="occasion" id="occasion" required>
+      <select name="occasion" id="occasion" value="" required>
+        <option disabled selected value></option>
+        <option value="personal">Personal</option>
+        <option value="professional">Professional</option>
+        <option value="social">Social</option>
         <option value="other">Other</option>
-        <option value="meeting">Meeting</option>
-        <option value="birthday">Birthday</option>
-        <option value="appointment">Appointment</option>
       </select>
       <div class="bottomRow">
         <button id="submitEvent">Add</button>

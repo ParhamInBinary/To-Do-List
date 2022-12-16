@@ -57,7 +57,7 @@ export function addEventToList() {
   eventItemDate.append(eventItemDateIcon);
   titleAndDateContainer.append(eventItemTitle, eventItemDate);
   eventItemInfo.append(titleAndDateContainer, eventItemDescription);
-  eventIcon.append(birthdayIconOccasion, meetingIconOccasion);
+  eventIcon.append(birthdayIconOccasion);
   eventItem.append(eventIcon, eventItemInfo, removeAndEditContainer);
   eventList.append(eventItem);
 
@@ -67,7 +67,7 @@ export function addEventToList() {
   eventItemTitle.innerHTML = eventInStorage.title;
   eventItemDate.innerHTML = eventInStorage.date;
   eventItemDescription.innerHTML = eventInStorage.description;
-  eventIcon.innerHTML = if ( eventInStorage.occasion ) {
+  // eventIcon.innerHTML = if ( eventInStorage.occasion ) {
     
-  }
+  // }
 }

@@ -11,13 +11,13 @@ export function addEventToList() {
   personalIconOccasion.classList.add("fa-solid", "fa-user", "fa-xl");
   
   const professionalIconOccasion = document.createElement("i");
-  professionalIconOccasion.classList.add("fa-solid", "fa-handshake-angle", "fa-xl");
+  professionalIconOccasion.classList.add("fa-solid", "fa-handshake-angle", "fa-2xl");
 
   const socialIconOccasion = document.createElement("i");
-  socialIconOccasion.classList.add("fa-solid", "fa-user-doctor", "fa-xl");
+  socialIconOccasion.classList.add("fa-solid", "fa-people-group", "fa-2xl");
 
   const otherIconOccasion = document.createElement("i");
-  otherIconOccasion.classList.add("fa-solid", "fa-ellipsis", "fa-xl");
+  otherIconOccasion.classList.add("fa-solid", "fa-ellipsis", "fa-2xl");
 
   const eventItemInfo = document.createElement("div");
   eventItemInfo.classList.add("eventItemInfo");
@@ -78,4 +78,14 @@ export function addEventToList() {
   eventItemDate.innerHTML = eventInStorage.date;
   eventItemDescription.innerHTML = eventInStorage.description;
 
+  removeEventItem.addEventListener("click", () => {
+    deleteEventItem(eventItem);
+    
+  })
+
+  
+}
+
+function deleteEventItem(eventItem) {
+  eventItem.remove();
 }

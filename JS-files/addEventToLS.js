@@ -4,14 +4,17 @@ const eventOccasionInput = document.querySelector("#occasion");
 const eventDateInput = document.querySelector("#pickDate");
 
 export function addEventToLS() {
+  const events = JSON.parse(localStorage.getItem('events')) || [];
+
   const date = eventDateInput.value;
 
-  const eventItemStored = {
+  const event= {
     title: eventTitleInput.value,
     date,
     description: eventDescInput.value,
     occasion: eventOccasionInput.value,
   };
 
-  localStorage.setItem("events", JSON.stringify(eventItemStored));
+  events.push(event);
+  localStorage.setItem("events", JSON.stringify(events));
 }

@@ -88,13 +88,16 @@ export function addEventToList() {
 
     
     
-    removeEventItem.addEventListener("click", () => {
-      deleteEventItem(eventItem);
-      localStorage.removeItem("events");
-    })
+    removeEventItem.addEventListener("click", (item) => {
+      const eventArray = JSON.parse(localStorage.getItem("events"));
+      const index = eventArray.indexOf(item);
+
+      eventArray.splice(index, 1);
+      localStorage.setItem("events", JSON.stringify(eventArray));
+
+      eventItem.remove();
+    });
   }
 }
 
-function deleteEventItem(eventItem) {
-  eventItem.remove();
-}
+

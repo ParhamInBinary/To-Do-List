@@ -43,7 +43,7 @@ export function loadCalendarDays() {
 
   const emptySquare = weekdays.indexOf(dateString.split(", ")[0]);
 
-  calendarBody.innerHTML = "";
+  calendarBody.textContent = "";
 
   for (let i = 1; i <= emptySquare + daysInMonth; i++) {
     const daySquare = document.createElement("div");

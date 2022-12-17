@@ -6,6 +6,4 @@ export function openAddEventWindow() {
   document.querySelector(".blurCover").classList.toggle("displayBlock");
   document.querySelector(".addEventWindow").classList.toggle("displayFlex");
   document.querySelector("#submitEvent").classList.toggle("displayFlex");
-  document.querySelector("#saveChanges").classList.toggle("displayNone");
-
 }

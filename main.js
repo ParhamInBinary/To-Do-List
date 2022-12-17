@@ -6,7 +6,6 @@ import { openAddEventWindow } from "./JS-files/openAddEventWindow.js";
 import { closeAddEventWindow } from "./JS-files/closeAddEventWindow.js";
 import { addEventToLS } from "./JS-files/addEventToLS.js";
 import { addEventToList } from "./JS-files/addEventToList.js";
-import { ListActiveEvents } from "./JS-files/ListActiveEvents.js";
 
 
 main();
@@ -19,7 +18,7 @@ function main() {
   loadCalendarDays();
   addEventListeners();
   switchMonth();
-  ListActiveEvents();
+  addEventToList();
 }
 
 /**

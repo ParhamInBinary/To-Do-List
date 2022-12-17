@@ -118,7 +118,19 @@ label, .dateTitles, .occasionTitle {
     border-radius: 10px;
     width: 6rem;
     padding: .5rem;
-    display: flex;
+    display: none;
+    justify-content: center;
+    cursor: pointer;
+}
+#saveChanges {
+    background-color: var(--offColor);
+    color: var(--mainColor);
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    width: 6rem;
+    padding: .5rem;
+    display: none;
     justify-content: center;
     cursor: pointer;
 }

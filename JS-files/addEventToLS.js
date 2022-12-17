@@ -1,4 +1,3 @@
-
 export function addEventToLS() {
   const eventTitleInput = document.querySelector("#title");
   const eventDescInput = document.querySelector("#description");
@@ -10,6 +9,7 @@ export function addEventToLS() {
   const date = eventDateInput.value;
 
   const event= {
+    id: Math.random(),
     title: eventTitleInput.value,
     date,
     description: eventDescInput.value,

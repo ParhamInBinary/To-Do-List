@@ -1,10 +1,14 @@
-const eventList = document.querySelector(".eventList");
 
 export function addEventToList() {
+  const eventInStorage = JSON.parse(localStorage.getItem("events"));
+  
+  if ( !eventInStorage ) {
+    return
+  }
 
+  const eventList = document.querySelector(".eventList");
   eventList.textContent = "";
 
-  const eventInStorage = JSON.parse(localStorage.getItem("events"));
   for ( const item of eventInStorage) {
 
   const eventItem = document.createElement("div");

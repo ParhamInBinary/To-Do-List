@@ -40,7 +40,7 @@ function updateDate() {
         day: "numeric",
     });
     const dateDiv = document.querySelector(".currentDate");
-    dateDiv.innerHTML = "";
+    dateDiv.textContent = "";
     dateDiv.textContent = dateToString
 }
 

@@ -88,66 +88,58 @@ export function addEventToList() {
 
     removeEventItem.addEventListener("click", () => {
       const eventArray = JSON.parse(localStorage.getItem("events"));
-      const index = eventArray.indexOf(item);
+      const event = eventArray.find( event  => event.id === item.id);
 
-      eventArray.splice(index, 1);
+      eventArray.splice(event, 1);
       localStorage.setItem("events", JSON.stringify(eventArray));
 
       eventItem.remove();
     });
-
+    
     editEventItem.addEventListener("click", () => {
       const eventArray = JSON.parse(localStorage.getItem("events"));
-      eventArray.indexOf(item);
 
-     
-        document
-          .querySelector(".dropdownWindow")
-          .classList.toggle("displayNone");
+      document
+        .querySelector(".dropdownWindow")
+        .classList.add("displayNone");
 
-        document
+      document
         .querySelector(".blurCover")
-        .classList.toggle("displayBlock");
+        .classList.add("displayBlock");
 
-        document
-          .querySelector(".addEventWindow")
-          .classList.toggle("displayFlex");
+      document
+        .querySelector(".addEventWindow")
+        .classList.add("displayFlex");
 
-        document
-        .querySelector("#submitEvent")
-        .classList.toggle("displayNone");
-        
-        const saveChanges = document.querySelector("#saveChanges");
-        saveChanges.classList.toggle("displayFlex");
+      const saveChanges = document.querySelector("#saveChanges");
+      saveChanges.classList.add("displayFlex");
 
-        const eventTitleInput = document.querySelector("#title");
-        const eventDescInput = document.querySelector("#description");
-        const eventOccasionInput = document.querySelector("#occasion");
-        const eventDateInput = document.querySelector("#pickDate");
+      const eventTitleInput = document.querySelector("#title");
+      const eventDescInput = document.querySelector("#description");
+      const eventOccasionInput = document.querySelector("#occasion");
+      const eventDateInput = document.querySelector("#pickDate");
 
-        eventTitleInput.value = item.title;
-        eventDescInput.value = item.description;
-        eventOccasionInput.value = item.occasion;
-        eventDateInput.value = item.date;
+      eventTitleInput.value = item.title;
+      eventDescInput.value = item.description;
+      eventOccasionInput.value = item.occasion;
+      eventDateInput.value = item.date;
 
-        saveChanges.addEventListener("click", () => {
-          const eventArray = JSON.parse(localStorage.getItem("events"));
-          const index = eventArray.indexOf(item);
-          const event = eventArray[index];
+      saveChanges.addEventListener("click", () => {
+        const event = eventArray.find( event  => event.id === item.id);
 
-          event.title = eventTitleInput.value;
-          event.description = eventDescInput.value;
-          event.occasion = eventOccasionInput.value;
-          event.date = eventDateInput.value;
+        event.title = eventTitleInput.value;
+        event.description = eventDescInput.value;
+        event.occasion = eventOccasionInput.value;
+        event.date = eventDateInput.value;
 
-          localStorage.setItem("events", JSON.stringify(eventArray));
+        localStorage.setItem("events", JSON.stringify(eventArray));
 
-          document
-            .querySelector(".addEventWindow")
-            .classList.toggle("displayFlex");
-          document.querySelector(".blurCover").classList.toggle("displayBlock");
-        });
-      
+        addEventToList();
+        document.querySelector(".dropdownWindow").classList.remove("displayNone");
+        document.querySelector(".blurCover").classList.remove("displayBlock");
+        document.querySelector(".addEventWindow").classList.remove("displayFlex");
+        console.log(event)
+      });
     });
   }
 }

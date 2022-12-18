@@ -1,3 +1,5 @@
+import { loadCalendarDays } from "./loadCalendar.js";
+
 export function closeAddEventWindow() {
   document.querySelector(".dropdownWindow").classList.remove("displayNone");
   document.querySelector(".blurCover").classList.remove("displayBlock");
@@ -10,4 +12,5 @@ export function closeAddEventWindow() {
   for (const input of inputs) {
     input.value = "";
   }
+  loadCalendarDays();
 }

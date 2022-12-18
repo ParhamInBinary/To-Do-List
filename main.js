@@ -7,7 +7,6 @@ import { closeAddEventWindow } from "./JS-files/closeAddEventWindow.js";
 import { addEventToLS } from "./JS-files/addEventToLS.js";
 import { addEventToList } from "./JS-files/addEventToList.js";
 
-
 main();
 
 /**

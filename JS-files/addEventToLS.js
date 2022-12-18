@@ -3,12 +3,12 @@ export function addEventToLS() {
   const eventDescInput = document.querySelector("#description");
   const eventOccasionInput = document.querySelector("#occasion");
   const eventDateInput = document.querySelector("#pickDate");
-  
-  const events = JSON.parse(localStorage.getItem('events')) || [];
+
+  const events = JSON.parse(localStorage.getItem("events")) || [];
 
   const date = eventDateInput.value;
 
-  const event= {
+  const event = {
     id: Math.random(),
     title: eventTitleInput.value,
     date,

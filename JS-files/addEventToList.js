@@ -88,28 +88,22 @@ export function addEventToList() {
 
     removeEventItem.addEventListener("click", () => {
       const eventArray = JSON.parse(localStorage.getItem("events"));
-      const event = eventArray.find( event  => event.id === item.id);
+      const event = eventArray.find((event) => event.id === item.id);
 
       eventArray.splice(event, 1);
       localStorage.setItem("events", JSON.stringify(eventArray));
 
       eventItem.remove();
     });
-    
+
     editEventItem.addEventListener("click", () => {
       const eventArray = JSON.parse(localStorage.getItem("events"));
 
-      document
-        .querySelector(".dropdownWindow")
-        .classList.add("displayNone");
+      document.querySelector(".dropdownWindow").classList.add("displayNone");
 
-      document
-        .querySelector(".blurCover")
-        .classList.add("displayBlock");
+      document.querySelector(".blurCover").classList.add("displayBlock");
 
-      document
-        .querySelector(".addEventWindow")
-        .classList.add("displayFlex");
+      document.querySelector(".addEventWindow").classList.add("displayFlex");
 
       const saveChanges = document.querySelector("#saveChanges");
       saveChanges.classList.add("displayFlex");
@@ -125,7 +119,7 @@ export function addEventToList() {
       eventDateInput.value = item.date;
 
       saveChanges.addEventListener("click", () => {
-        const event = eventArray.find( event  => event.id === item.id);
+        const event = eventArray.find((event) => event.id === item.id);
 
         event.title = eventTitleInput.value;
         event.description = eventDescInput.value;
@@ -135,10 +129,14 @@ export function addEventToList() {
         localStorage.setItem("events", JSON.stringify(eventArray));
 
         addEventToList();
-        document.querySelector(".dropdownWindow").classList.remove("displayNone");
+        document
+          .querySelector(".dropdownWindow")
+          .classList.remove("displayNone");
         document.querySelector(".blurCover").classList.remove("displayBlock");
-        document.querySelector(".addEventWindow").classList.remove("displayFlex");
-        console.log(event)
+        document
+          .querySelector(".addEventWindow")
+          .classList.remove("displayFlex");
+        console.log(event);
       });
     });
   }

@@ -49,8 +49,20 @@ export function loadCalendarDays() {
     const daySquare = document.createElement("div");
     daySquare.classList.add("daySquare");
 
+    const eventArray = JSON.parse(localStorage.getItem("events"));
+    
     if (i > emptySquare) {
       daySquare.innerText = i - emptySquare;
+      const event = eventArray.find((event) => event.id === event.id);
+
+      if ( event ) {
+      const eventInDay = document.createElement("div");
+      eventInDay.classList.add("eventInDay");
+
+      eventInDay.textContent = event.title;
+      
+      daySquare.append(eventInDay)
+    }
 
       daySquare.addEventListener("click", () => {});
     } else {

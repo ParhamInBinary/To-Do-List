@@ -390,13 +390,13 @@ header {
 .daySquare {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     width: calc(100% / 7 - 2px);
     padding: 1rem;
     margin: 1px;
     color: var(--detailColor);
     border: 3px solid var(--secondColor);
     border-radius: 10px;
+    overflow-y: scroll;
 }
 
 .emptySquare {

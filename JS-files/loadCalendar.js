@@ -50,19 +50,20 @@ export function loadCalendarDays() {
     daySquare.classList.add("daySquare");
 
     const eventArray = JSON.parse(localStorage.getItem("events"));
-    
+    const correctDay = `${year}-${month + 1}-${i - emptySquare}`;
+
     if (i > emptySquare) {
       daySquare.innerText = i - emptySquare;
-      const event = eventArray.find((event) => event.id === event.id);
 
-      if ( event ) {
-      const eventInDay = document.createElement("div");
-      eventInDay.classList.add("eventInDay");
+      eventArray.forEach((event) => {
+        if (event.date == correctDay) {
+          const eventInDay = document.createElement("div");
+          eventInDay.classList.add("eventInDay");
 
-      eventInDay.textContent = event.title;
-      
-      daySquare.append(eventInDay)
-    }
+          eventInDay.textContent = event.title;
+          daySquare.append(eventInDay);
+        }
+      });
 
       daySquare.addEventListener("click", () => {});
     } else {

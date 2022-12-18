@@ -1,3 +1,5 @@
+import { loadCalendarDays } from "./loadCalendar.js";
+
 export function addEventToList() {
   const eventInStorage = JSON.parse(localStorage.getItem("events"));
 
@@ -94,6 +96,7 @@ export function addEventToList() {
       localStorage.setItem("events", JSON.stringify(eventArray));
 
       eventItem.remove();
+      loadCalendarDays();
     });
 
     editEventItem.addEventListener("click", () => {
@@ -136,7 +139,7 @@ export function addEventToList() {
         document
           .querySelector(".addEventWindow")
           .classList.remove("displayFlex");
-        console.log(event);
+        loadCalendarDays();
       });
     });
   }

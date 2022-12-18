@@ -139,6 +139,9 @@ export function addEventToList() {
         document
           .querySelector(".addEventWindow")
           .classList.remove("displayFlex");
+
+        const saveChanges = document.querySelector("#saveChanges");
+        saveChanges.classList.remove("displayFlex");
         loadCalendarDays();
       });
     });

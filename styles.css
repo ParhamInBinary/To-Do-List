@@ -388,6 +388,9 @@ header {
 }
 
 .daySquare {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: calc(100% / 7 - 2px);
     padding: 1rem;
     margin: 1px;
@@ -398,5 +401,11 @@ header {
 
 .emptySquare {
     border: none;
+}
+
+.eventInDay {
+    background-color: var(--mainColor);
+    border-radius: 5px;
+    padding: .1rem .5rem;
 }
 /* ========== CALENDAR ========== */

@@ -54,16 +54,22 @@ export function loadCalendarDays() {
 
     if (i > emptySquare) {
       daySquare.innerText = i - emptySquare;
- 
-      eventArray.forEach((event) => {
-        if (event.date == correctDay) {
-          const eventsInDay = document.createElement("div");
-          eventsInDay.classList.add("eventsInDay");
+      
+      let eventCounter = 0;
+      const eventDayDiv = document.createElement("div");
+      eventDayDiv.classList.add("eventsInDay");
 
-          eventsInDay.textContent = event.title;
-          daySquare.append(eventsInDay);
+      eventArray.forEach( event => {
+        if ( event.date === correctDay ) {
+          eventCounter++;
         }
       });
+      if ( eventCounter <= 0 ) {
+        eventDayDiv.style.display = "none"
+      }
+
+      eventDayDiv.textContent = eventCounter;
+      daySquare.append(eventDayDiv)
 
       daySquare.addEventListener("click", () => {});
     } else {

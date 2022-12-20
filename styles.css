@@ -174,7 +174,7 @@ header {
     border: 1px solid var(--detailColor);
     background-color: var(--mainColor);
     border-radius: 10px;
-    transform: translateY(-8.5rem) scaleY(0);
+    transform: translateY(-50%) scaleY(0);
     transition: transform .2s;
 }
 .openMyEvents {
@@ -194,6 +194,11 @@ header {
     text-decoration: underline;
     transform: scaleX(1);
     color: var(--detailColor);
+}
+
+.eventList {
+    overflow-y: scroll;
+    max-height: 70vh;
 }
 
 
@@ -410,5 +415,6 @@ header {
     padding: .1rem .5rem;
     display: flex;
     justify-content: center;
+    width: 2rem;
 }
 /* ========== CALENDAR ========== */

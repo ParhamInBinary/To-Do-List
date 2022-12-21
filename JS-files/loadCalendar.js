@@ -70,12 +70,14 @@ export function loadCalendarDays() {
           eventCounter++;
         }
       });
-      if ( eventCounter <= 0 ) {
-        eventDayDiv.style.display = "none"
-      }
 
       eventDayDiv.textContent = eventCounter;
       daySquare.append(eventDayDiv)
+
+      if ( eventCounter <= 0 ) {
+        eventDayDiv.remove();
+      }
+
 
       daySquare.addEventListener("click", () => {
         

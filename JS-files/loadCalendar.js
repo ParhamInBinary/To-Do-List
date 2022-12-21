@@ -44,18 +44,24 @@ export function loadCalendarDays() {
   const emptySquare = weekdays.indexOf(dateString.split(", ")[0]);
 
   calendarBody.textContent = "";
-
+  
   for (let i = 1; i <= emptySquare + daysInMonth; i++) {
     const daySquare = document.createElement("div");
     daySquare.classList.add("daySquare");
 
-    const eventArray = JSON.parse(localStorage.getItem("events"));
-    const correctDay = `${year}-${month + 1}-${i - emptySquare}`;
-
+    let eventArray = JSON.parse(localStorage.getItem("events"));
+    if ( !eventArray ) {
+      eventArray = [];
+    }
+    
     if (i > emptySquare) {
       daySquare.innerText = i - emptySquare;
-      
+
+      const today = (i - emptySquare).toString().padStart(2, "0");
+      const correctDay = `${year}-${month + 1}-${today}`;
+
       let eventCounter = 0;
+      
       const eventDayDiv = document.createElement("div");
       eventDayDiv.classList.add("eventsInDay");
 
@@ -71,11 +77,12 @@ export function loadCalendarDays() {
       eventDayDiv.textContent = eventCounter;
       daySquare.append(eventDayDiv)
 
-      daySquare.addEventListener("click", () => {});
+      daySquare.addEventListener("click", () => {
+        
+      });
     } else {
       daySquare.classList.add("emptySquare");
     }
-
     calendarBody.appendChild(daySquare);
   }
 }

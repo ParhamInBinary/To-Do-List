@@ -90,13 +90,12 @@ export function addEventToList() {
 
     removeEventItem.addEventListener("click", () => {
       const eventArray = JSON.parse(localStorage.getItem("events"));
-      const event = eventArray.find((event) => event.id === item.id);
+      const filteredEvent = eventArray.find((e) => e.id === item.id);
 
-      eventArray.splice(event, 1);
-      localStorage.setItem("events", JSON.stringify(eventArray));
+      localStorage.setItem("events", JSON.stringify(filteredEvent));
 
-      eventItem.remove();
       loadCalendarDays();
+      addEventToList();
     });
 
     editEventItem.addEventListener("click", () => {

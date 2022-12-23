@@ -6,7 +6,7 @@ let whichMonth = 0;
 export function loadCalendarDays() {
   const calendarBody = document.querySelector(".calendarBody");
   const currentMonth = document.querySelector(".currentMonth");
-  const weekdays = [
+  let weekdays = [
     "söndag",
     "måndag",
     "tisdag",

@@ -90,7 +90,7 @@ export function addEventToList() {
 
     removeEventItem.addEventListener("click", () => {
       const eventArray = JSON.parse(localStorage.getItem("events"));
-      const filteredEvent = eventArray.find((e) => e.id === item.id);
+      const filteredEvent = eventArray.filter((e) => e.id !== item.id);
 
       localStorage.setItem("events", JSON.stringify(filteredEvent));
 
